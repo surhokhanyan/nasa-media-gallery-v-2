@@ -1,0 +1,16 @@
+@import "../../assets/mixins/mixins.scss";
+
+.show_wrapper {
+    @include flColStart();
+    gap: 20px;
+    width: 70%;
+    padding-top: 40px;
+
+    .nothing_found {
+        @include font(24px, normal, var(--m-font), #364a60);
+        align-self: center;
+    }
+}
+.back_btn {
+    width: 120px;
+}

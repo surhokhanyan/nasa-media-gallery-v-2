@@ -1,0 +1,8 @@
+@import "../../assets/mixins/mixins.scss";
+
+.spinner {
+    @include size(100vw, 100vh);
+    @include flexCenter();
+    position: fixed;
+    z-index: 999;
+}

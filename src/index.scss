@@ -1,0 +1,32 @@
+@import "./assets/mixins/mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--m-font);
+}
+
+.App {
+    @include flColCenterStart();
+    gap: 25px;
+    width: 100%;
+    min-height: 100vh;
+    background: #c8cecc;
+}
+
+:root {
+    --m-font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    --m-text-yellow: #fcfad4;
+    --m-blue: #364a60;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #364a60;
+    border-radius: 10px;
+}

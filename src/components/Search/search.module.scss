@@ -1,0 +1,113 @@
+@import "../../assets/mixins/mixins.scss";
+
+.search_wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+    margin-top: 50px;
+    width: 70%;
+    .page_title {
+        font-size: 4vw;
+        color: #364a60;
+    }
+    .search_filter {
+        @include flexCenter();
+        width: 100%;
+        gap: 15px;
+    }
+    .search_input_btn_wrapper {
+        @include flexCenter();
+        width: 100%;
+        gap: 20px;
+        position: relative;
+        background: #c8cecc;
+        z-index: 5;
+    }
+    .found_items_wrapper {
+        @include flColCenterStart();
+        gap: 20px;
+        width: 750px;
+        min-height: 200px;
+        max-height: 550px;
+        overflow-y: auto;
+        padding: 0px 30px 30px 30px;
+        transition-duration: 200ms;
+        border: 1px solid #9a9f9d;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        top: -55px;
+        .found_items_header {
+            position: sticky;
+            top: 0;
+            display: grid;
+            background-color: #c8cecc;
+            grid-template-columns: 1.1fr 1fr 1fr 1fr;
+            width: 100%;
+            gap: 20px;
+            padding: 45px 5px 5px 5px;
+            & > p {
+                @include flexCenterStart();
+                @include font(16px, normal, var(--m-font), #364a60);
+                border-right: 1px solid #364a60;
+                &:last-child {
+                    border: none;
+                }
+                @media screen and (max-width: 500px) {
+                    font-size: 14px;
+                }
+            }
+        }
+        .found_items {
+            @include flColCenterStart();
+            width: 100%;
+            gap: 15px;
+            .found_item {
+                width: 100%;
+                padding: 5px;
+                display: grid;
+                grid-template-columns: 1.1fr 1fr 1fr 1fr;
+                transition-duration: 300ms;
+                gap: 20px;
+                cursor: pointer;
+                & > p,
+                h2 {
+                    @include flexCenter();
+                    @include font(14px, normal, var(--m-font), #6f7275);
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @media screen and (max-width: 500px) {
+                        font-size: 12px;
+                    }
+                }
+                & > img {
+                    width: 80%;
+                    height: auto;
+                    object-fit: cover;
+                }
+                & > span {
+                    @include size(130px, 70px);
+                    @include flexCenterStart();
+                    color: orange;
+                }
+                &:hover {
+                    background: #f2ebe5;
+                }
+            }
+        }
+    }
+    .nothing_found {
+        @include font(20px, normal, var(--m-font), var(--m-text-yellow));
+    }
+}
+
+.year_filter {
+    width: 50%;
+}
+.search_input {
+    width: 100%;
+}

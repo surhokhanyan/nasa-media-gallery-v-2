@@ -1,0 +1,21 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.preview_image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.keyword {
+    margin: 2px;
+}
+.info_wrapper {
+    @include flexStartStart();
+    gap: 10px;
+}
+.keywords_wrapper {
+    width: calc(100% - 100px);
+}
+.title {
+    display: block;
+    width: 90px;
+}
